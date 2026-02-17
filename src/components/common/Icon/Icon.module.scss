@@ -1,0 +1,27 @@
+.icon {
+  display: inline-block;
+  flex-shrink: 0;
+  vertical-align: middle;
+  fill: currentcolor;
+  stroke: currentcolor;
+  transition: v.$transition-fast;
+
+  &:hover {
+    color: var(--icon-hover-color, currentColor);
+  }
+
+  // Modifiers
+  &.--spin {
+    animation: iconSpin 1s linear infinite;
+  }
+}
+
+@keyframes iconSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

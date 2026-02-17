@@ -1,0 +1,132 @@
+@use 'sass:color';
+@use '@/styles/variables' as v;
+
+/**
+ * SCSS Mixins
+ */
+
+// メディアクエリ
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == 'sm' {
+    @media (min-width: v.$breakpoint-sm) {
+      @content;
+    }
+  } @else if $breakpoint == 'md' {
+    @media (min-width: v.$breakpoint-md) {
+      @content;
+    }
+  } @else if $breakpoint == 'lg' {
+    @media (min-width: v.$breakpoint-lg) {
+      @content;
+    }
+  } @else if $breakpoint == 'xl' {
+    @media (min-width: v.$breakpoint-xl) {
+      @content;
+    }
+  } @else if $breakpoint == 'xxl' {
+    @media (min-width: v.$breakpoint-xxl) {
+      @content;
+    }
+  }
+}
+
+// Flexbox中央揃え
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Flexbox縦方向中央揃え
+@mixin flex-center-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+// 省略記号
+@mixin text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 複数行省略
+@mixin text-ellipsis-multiline($lines: 2) {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: v.$lines;
+  -webkit-box-orient: vertical;
+}
+
+// スクリーンリーダー専用テキスト
+@mixin sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-width: 0;
+  clip-path: inset(50%);
+}
+
+// ホバーエフェクト
+@mixin hover-lift {
+  transition: v.$transition-base;
+
+  &:hover {
+    box-shadow: v.$shadow-md;
+    transform: translateY(-2px);
+  }
+}
+
+// フォーカスリング
+@mixin focus-ring($color: v.$primary-color) {
+  &:focus-visible {
+    outline: 2px solid $color;
+    outline-offset: 2px;
+  }
+}
+
+// カード
+@mixin card {
+  padding: v.$spacing-lg;
+  background-color: v.$bg-white;
+  border-radius: v.$border-radius-8;
+  box-shadow: v.$shadow-md;
+}
+
+// ボタンリセット
+@mixin button-reset {
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+// スクロールバースタイル
+@mixin custom-scrollbar {
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: v.$bg-gray-light;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: v.$border-color;
+    border-radius: v.$border-radius-full;
+
+    &:hover {
+      background: color.darken(v.$border-color, 10%);
+    }
+  }
+}

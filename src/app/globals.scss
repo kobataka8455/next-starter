@@ -1,0 +1,93 @@
+/**
+ * グローバルスタイル
+ */
+
+// リセット
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+// ベーススタイル
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: v.$font-family-base;
+  font-size: v.$font-size-16;
+  font-weight: v.$font-weight-normal;
+  line-height: v.$line-height-base;
+  color: v.$text-color;
+  background-color: v.$bg-white;
+}
+
+// リンク
+a {
+  color: v.$primary-color;
+  text-decoration: none;
+  transition: v.$transition-fast;
+
+  &:hover {
+    color: color.adjust(v.$primary-color, $lightness: -10%);
+    text-decoration: underline;
+  }
+
+  &:focus-visible {
+    @include m.focus-ring;
+  }
+}
+
+// ボタン
+button {
+  @include m.focus-ring;
+}
+
+// 画像
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+// スクリーンリーダー専用
+.sr-only {
+  @include m.sr-only;
+}
+
+// スキップリンク（アクセシビリティ）
+.skip-link {
+  @include m.sr-only;
+  z-index: v.$z-index-tooltip;
+  padding: v.$spacing-md;
+  color: white;
+  text-decoration: none;
+  background-color: v.$primary-color;
+
+  &:focus {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    white-space: normal;
+    clip-path: none;
+  }
+}
+
+// コンテナ
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 v.$spacing-md;
+  margin: 0 auto;
+
+  @include m.respond-to('md') {
+    padding: 0 v.$spacing-lg;
+  }
+}

@@ -1,0 +1,104 @@
+.userList {
+  max-width: 1200px;
+  padding: v.$spacing-xl;
+  margin: 0 auto;
+
+  &__title {
+    margin-bottom: v.$spacing-lg;
+    font-size: v.$font-size-20;
+    font-weight: v.$font-weight-bold;
+    color: v.$text-color;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: v.$spacing-md;
+    list-style: none;
+  }
+
+  &__item {
+    @include m.card;
+    display: flex;
+    gap: v.$spacing-lg;
+    align-items: center;
+    justify-content: space-between;
+    transition: v.$transition-base;
+
+    &:hover {
+      box-shadow: v.$shadow-lg;
+      transform: translateY(-2px);
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex: 1;
+    gap: v.$spacing-md;
+    align-items: center;
+  }
+
+  &__avatar {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    background-color: v.$bg-gray-light;
+    border-radius: v.$border-radius-full;
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    gap: v.$spacing-xs;
+  }
+
+  &__name {
+    font-size: v.$font-size-18;
+    font-weight: v.$font-weight-bold;
+    color: v.$text-color;
+  }
+
+  &__email {
+    font-size: v.$font-size-14;
+    color: v.$text-light;
+  }
+
+  &__role {
+    display: inline-block;
+    width: fit-content;
+    padding: v.$spacing-xs v.$spacing-sm;
+    margin-top: v.$spacing-xs;
+    font-size: v.$font-size-14;
+    font-weight: v.$font-weight-bold;
+    border-radius: v.$border-radius-4;
+
+    // Modifiers - Role variants
+    &.--admin {
+      color: v.$danger-color;
+      background-color: rgba(v.$danger-color, 0.1);
+    }
+
+    &.--member {
+      color: v.$primary-color;
+      background-color: rgba(v.$primary-color, 0.1);
+    }
+
+    &.--guest {
+      color: v.$secondary-color;
+      background-color: rgba(v.$secondary-color, 0.1);
+    }
+  }
+
+  &__error {
+    padding: v.$spacing-md;
+    color: v.$danger-color;
+    background-color: rgba(v.$danger-color, 0.1);
+    border-radius: v.$border-radius-8;
+  }
+
+  @include m.respond-to('sm') {
+    &__item {
+      flex-direction: row;
+    }
+  }
+}

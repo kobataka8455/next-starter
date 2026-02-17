@@ -1,0 +1,14 @@
+{
+  "parser": {
+    ".tsx$": "@markuplint/jsx-parser"
+  },
+  "specs": {
+    ".tsx$": "@markuplint/react-spec"
+  },
+  "rules": {
+    "permitted-contents": true,
+    "require-accessible-name": true,
+    "wai-aria": true,
+    "no-duplicate-dt": true
+  }
+}

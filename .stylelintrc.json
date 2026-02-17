@@ -1,0 +1,49 @@
+{
+  "extends": [
+    "stylelint-config-standard-scss",
+    "stylelint-config-recess-order"
+  ],
+  "plugins": ["stylelint-order"],
+  "rules": {
+    "selector-class-pattern": null,
+    "custom-property-pattern": null,
+    "scss/dollar-variable-pattern": null,
+    "scss/at-mixin-pattern": null,
+    "scss/at-function-pattern": null,
+    "keyframes-name-pattern": null,
+    "selector-id-pattern": null,
+    "scss/percent-placeholder-pattern": null,
+    "alpha-value-notation": "percentage",
+    "color-function-notation": "modern",
+    "no-descending-specificity": null,
+    "declaration-empty-line-before": null,
+    "at-rule-empty-line-before": [
+      "always",
+      {
+        "except": ["blockless-after-same-name-blockless", "first-nested"],
+        "ignore": ["after-comment"],
+        "ignoreAtRules": ["else"]
+      }
+    ],
+    "scss/at-else-closing-brace-newline-after": "always-last-in-chain",
+    "scss/at-else-closing-brace-space-after": "always-intermediate",
+    "scss/at-else-empty-line-before": "never",
+    "scss/at-if-closing-brace-newline-after": "always-last-in-chain",
+    "scss/at-if-closing-brace-space-after": "always-intermediate",
+    "value-keyword-case": [
+      "lower",
+      {
+        "ignoreKeywords": [
+          "BlinkMacSystemFont",
+          "Arial",
+          "Roboto",
+          "Helvetica Neue",
+          "Segoe UI",
+          "Courier New",
+          "Courier"
+        ]
+      }
+    ]
+  },
+  "ignoreFiles": ["node_modules/**/*", ".next/**/*", "out/**/*"]
+}

@@ -1,0 +1,106 @@
+{
+  "name": "next-starter",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "packageManager": "pnpm@9.4.0",
+  "description": "A modern Next.js starter kit with SSR/SSG switching, TypeScript, and best practices",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "clean": "rm -rf .next out node_modules/.cache",
+    "test": "vitest --project=unit",
+    "test:ui": "vitest --ui --project=unit",
+    "test:coverage": "vitest --coverage --project=unit",
+    "test:storybook": "vitest --project=storybook",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "lint": "pnpm lint:js && pnpm lint:css && pnpm lint:markup",
+    "lint:js": "eslint . --report-unused-disable-directives --max-warnings 0",
+    "lint:js:fix": "eslint . --fix",
+    "lint:css": "stylelint \"src/**/*.{css,scss}\"",
+    "lint:css:fix": "stylelint \"src/**/*.{css,scss}\" --fix",
+    "lint:markup": "markuplint \"src/**/*.tsx\"",
+    "format": "prettier --write \"src/**/*.{ts,tsx,css,scss}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,css,scss}\"",
+    "type-check": "tsc --noEmit",
+    "prepare": "husky install",
+    "sb": "storybook dev -p 6006",
+    "build-sb": "storybook build"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.51.16",
+    "@tanstack/react-query-devtools": "^5.51.16",
+    "axios": "^1.7.7",
+    "next": "^15.3.3",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "zod": "^4.3.6",
+    "zustand": "^5.0.11"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@markuplint/jsx-parser": "^4.7.23",
+    "@markuplint/react-spec": "^4.5.23",
+    "@next/eslint-plugin-next": "^15.3.3",
+    "@playwright/test": "^1.48.2",
+    "@storybook/addon-a11y": "^10.2.8",
+    "@storybook/addon-docs": "^10.2.8",
+    "@storybook/addon-onboarding": "^10.2.8",
+    "@storybook/addon-vitest": "^10.2.8",
+    "@storybook/nextjs-vite": "^10.2.9",
+    "@testing-library/dom": "^10.0.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@typescript-eslint/eslint-plugin": "^8.55.0",
+    "@typescript-eslint/parser": "^8.55.0",
+    "@vitejs/plugin-react": "^5.1.4",
+    "@vitest/browser-playwright": "4.0.18",
+    "@vitest/coverage-v8": "^4.0.18",
+    "@vitest/ui": "^4.0.18",
+    "eslint": "^10.0.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-storybook": "^10.2.8",
+    "husky": "^9.1.7",
+    "jsdom": "^28.0.0",
+    "lint-staged": "^16.2.7",
+    "markuplint": "^4.14.1",
+    "msw": "^2.12.10",
+    "msw-storybook-addon": "^2.0.6",
+    "playwright": "^1.58.2",
+    "prettier": "^3.3.3",
+    "sass": "^1.80.0",
+    "storybook": "^10.2.8",
+    "stylelint": "^17.3.0",
+    "stylelint-config-recess-order": "^7.6.1",
+    "stylelint-config-standard-scss": "^17.0.0",
+    "stylelint-order": "^7.0.1",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.55.0",
+    "vitest": "^4.0.18"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,scss}": [
+      "stylelint --fix",
+      "prettier --write"
+    ]
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
+  }
+}

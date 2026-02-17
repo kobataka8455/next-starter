@@ -1,0 +1,109 @@
+.button {
+  position: relative;
+  display: inline-flex;
+  gap: v.$spacing-sm;
+  align-items: center;
+  justify-content: center;
+  font-weight: v.$font-weight-bold;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: v.$border-radius-8;
+  transition: v.$transition-base;
+
+  @include m.focus-ring;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 60%;
+  }
+
+  // Elements
+  &__spinner {
+    animation: spin 1s linear infinite;
+  }
+
+  &__text {
+    &.is-hidden {
+      visibility: hidden;
+    }
+  }
+
+  // Loading state
+  &.is-loading {
+    cursor: wait;
+  }
+
+  // Modifiers - Variants
+  &.--primary {
+    color: white;
+    background-color: v.$primary-color;
+
+    &:hover:not(:disabled) {
+      background-color: color.adjust(v.$primary-color, $lightness: -10%);
+    }
+
+    &:active:not(:disabled) {
+      background-color: color.adjust(v.$primary-color, $lightness: -15%);
+    }
+  }
+
+  &.--secondary {
+    color: white;
+    background-color: v.$secondary-color;
+
+    &:hover:not(:disabled) {
+      background-color: color.adjust(v.$secondary-color, $lightness: -10%);
+    }
+  }
+
+  &.--danger {
+    color: white;
+    background-color: v.$danger-color;
+
+    &:hover:not(:disabled) {
+      background-color: color.adjust(v.$danger-color, $lightness: -10%);
+    }
+  }
+
+  &.--outline {
+    color: v.$primary-color;
+    background-color: transparent;
+    border-color: v.$primary-color;
+
+    &:hover:not(:disabled) {
+      color: white;
+      background-color: v.$primary-color;
+    }
+  }
+
+  // Modifiers - Sizes
+  &.--sm {
+    padding: v.$spacing-xs v.$spacing-md;
+    font-size: v.$font-size-14;
+  }
+
+  &.--md {
+    padding: v.$spacing-sm v.$spacing-lg;
+    font-size: v.$font-size-16;
+  }
+
+  &.--lg {
+    padding: v.$spacing-md v.$spacing-xl;
+    font-size: v.$font-size-18;
+  }
+
+  // Modifiers - Full width
+  &.--full-width {
+    width: 100%;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
