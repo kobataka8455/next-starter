@@ -10,5 +10,13 @@
     "require-accessible-name": true,
     "wai-aria": true,
     "no-duplicate-dt": true
-  }
+  },
+  "nodeRules": [
+    {
+      "selector": "svg",
+      "rules": {
+        "permitted-contents": false
+      }
+    }
+  ]
 }

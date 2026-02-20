@@ -4,6 +4,7 @@
  * ユーザーリストコンポーネント（サンプル）
  */
 
+import Image from 'next/image';
 import { useUsers } from '@/hooks/useUsers';
 import { Button } from '@/components/common/Button';
 import styles from './UserList.module.scss';
@@ -46,9 +47,12 @@ export const UserList = () => {
           <li key={user.id} className={styles.userList__item}>
             <div className={styles.userList__info}>
               {user.avatar && (
-                <img
+                <Image
                   src={user.avatar}
                   alt=""
+                  width={40}
+                  height={40}
+                  unoptimized
                   className={styles.userList__avatar}
                   aria-hidden="true"
                 />
