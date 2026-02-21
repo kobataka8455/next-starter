@@ -2,7 +2,7 @@
  * Iconコンポーネントの型定義
  */
 
-import React from 'react';
+import type React from 'react';
 
 export type IconProps = React.SVGProps<SVGSVGElement> & {
   /** アイコン名（例: 'user', 'search'） */

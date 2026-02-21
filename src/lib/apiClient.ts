@@ -2,8 +2,8 @@
  * AxiosベースのAPIクライアント
  */
 
-import axios, { AxiosError, InternalAxiosRequestConfig } from 'axios';
-import { ApiError } from '@/types';
+import axios, { type AxiosError, type InternalAxiosRequestConfig } from 'axios';
+import { type ApiError } from '@/types';
 
 // 環境変数から基底URLを取得
 const baseURL =

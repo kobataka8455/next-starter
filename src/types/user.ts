@@ -2,7 +2,7 @@
  * ユーザー関連の型定義
  */
 
-import { ID, DateString } from './common';
+import { type ID, type DateString } from './common';
 
 export type User = {
   id: ID;

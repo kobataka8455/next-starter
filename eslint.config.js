@@ -4,6 +4,7 @@ import reactHooks from 'eslint-plugin-react-hooks';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 import storybook from 'eslint-plugin-storybook';
 import nextPlugin from '@next/eslint-plugin-next';
+import importX from 'eslint-plugin-import-x';
 
 export default tseslint.config(
   // グローバル無視パターン
@@ -27,6 +28,29 @@ export default tseslint.config(
   // ベース設定
   js.configs.recommended,
   ...tseslint.configs.recommendedTypeChecked,
+
+  {
+    plugins: { 'import-x': importX },
+    rules: {
+      '@typescript-eslint/consistent-type-imports': [
+        'error',
+        {
+          prefer: 'type-imports',
+          fixStyle: 'inline-type-imports', // または 'separate-type-imports'
+        },
+      ],
+      // 'import/order' を 'import-x/order' に変えるだけ
+      'import-x/order': [
+        'error',
+        {
+          groups: ['builtin', 'external', 'internal', 'type'],
+          'newlines-between': 'never',
+        },
+      ],
+      // 型のインポートに関しても同様
+      'import-x/no-duplicates': 'error',
+    },
+  },
 
   // TypeScriptパーサー設定
   {

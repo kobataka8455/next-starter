@@ -2,8 +2,8 @@ import { describe, it, expect, vi } from 'vitest';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { UserList } from '@/components/modules/UserList';
 import { http, HttpResponse } from 'msw';
+import { UserList } from '@/components/modules/UserList';
 import { server } from '@/mocks/server';
 
 const API_BASE_URL = 'http://localhost:8000/api';

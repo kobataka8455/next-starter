@@ -4,8 +4,8 @@
  */
 
 import React from 'react';
-import styles from './Icon.module.scss';
 import type { IconProps } from './Icon.types';
+import styles from './Icon.module.scss';
 import { iconPaths } from './iconPaths';
 
 export const Icon = ({

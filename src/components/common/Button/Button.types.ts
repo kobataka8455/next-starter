@@ -2,7 +2,7 @@
  * ボタンコンポーネントの型定義
  */
 
-import React from 'react';
+import type React from 'react';
 
 /** ボタンのスタイルバリエーション */
 export type ButtonVariant = 'primary' | 'secondary' | 'danger' | 'outline';

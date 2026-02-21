@@ -3,7 +3,7 @@
  */
 
 import styles from './Button.module.scss';
-import { ButtonProps } from './Button.types';
+import { type ButtonProps } from './Button.types';
 
 export const Button = ({
   variant = 'primary',

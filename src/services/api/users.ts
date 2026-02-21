@@ -2,14 +2,14 @@
  * ユーザー関連のAPI関数
  */
 
-import { apiClient } from './client';
-import { userSchema, userProfileSchema } from './schemas/user';
 import type {
   User,
   UserProfile,
   CreateUserInput,
   UpdateUserInput,
 } from '@/types';
+import { apiClient } from './client';
+import { userSchema, userProfileSchema } from './schemas/user';
 
 /**
  * ユーザー一覧を取得

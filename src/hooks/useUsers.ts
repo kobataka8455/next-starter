@@ -3,6 +3,7 @@
  */
 
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import type { CreateUserInput, UpdateUserInput } from '@/types';
 import {
   fetchUsers,
   fetchUser,
@@ -11,7 +12,6 @@ import {
   updateUser,
   deleteUser,
 } from '@/services/api/users';
-import type { CreateUserInput, UpdateUserInput } from '@/types';
 
 // クエリキー
 export const userKeys = {
